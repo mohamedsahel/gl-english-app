@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path='/' element={<Root />}>
           <Route index element={<IndexRoute />} />
-          <Route path='play/:categoryId' element={<PlayRoute />} />
+          <Route path='play' element={<PlayRoute />} />
           <Route path='*' element={<Navigate to='/' replace />} />
         </Route>
       </Routes>
