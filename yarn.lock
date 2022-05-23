@@ -1032,6 +1032,11 @@ react-refresh@^0.13.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.13.0.tgz#cbd01a4482a177a5da8d44c9755ebb1f26d5a1c1"
   integrity sha512-XP8A9BT0CpRBD+NYLLeIhld/RqG9+gktUjW1FkE+Vm7OCinbG1SshcK5tb9ls4kzvjZr9mOQc7HYgBngEyPAXg==
 
+react-rewards@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-rewards/-/react-rewards-2.0.3.tgz#685aee98654ab4f060e297849f39cf0a16cec042"
+  integrity sha512-qww5Jtk2HmCjR9wc7+0c2iP8oCQzENZn8pnoJGi0S6o+6dAD25+ZoagLSWdoBLGVwxfP5kFBjv3VZ6L8fPk6lg==
+
 react-router-dom@6:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.3.0.tgz#a0216da813454e521905b5fa55e0e5176123f43d"

@@ -2,6 +2,8 @@ import { FormEvent, useEffect, useMemo, useState } from 'react'
 import randomWords from 'random-words'
 import axios from 'axios'
 import { useScore } from '../store'
+import { useReward } from 'react-rewards'
+import confettiEffectSrc from '../success.mp3'
 
 type Question = {
   question: string
@@ -49,6 +51,9 @@ export default function PlayRoute() {
   const [solved, setSolved] = useState(false)
   const [value, setValue] = useState('')
   const setScore = useScore((state: any) => state.updateScore)
+  const { reward } = useReward('rewardId', 'confetti', {
+    elementCount: 150,
+  })
 
   const placeholder = useMemo(
     () =>
@@ -60,6 +65,9 @@ export default function PlayRoute() {
     if (value === currentQuestion?.answer) {
       setSolved(true)
       setScore(1)
+      reward()
+      const audio = new Audio(confettiEffectSrc)
+      audio.play()
     } else {
       setSolved(false)
     }
@@ -92,7 +100,7 @@ export default function PlayRoute() {
         <div className='text-2xl md:text-3xl text-center font-medium max-w-2xl mt-9 mb-16'>
           {currentQuestion.question}
         </div>
-        <div className='flex justify-center mb-10'>
+        <div className='flex justify-center mb-10 relative'>
           <input
             type='text'
             className={`rounded-2xl tracking-[1rem] outline-none px-6 py-3 text-2xl font-medium text-center w-full max-w-sm ${
@@ -111,6 +119,7 @@ export default function PlayRoute() {
             value={value}
             autoFocus
           />
+          <span id='rewardId' className='absolute left-1/2' />
         </div>
       </div>
       <div className='flex items-center justify-between py-4'>
